@@ -1,0 +1,6 @@
+hey with the help of http GET https://exercisedb.p.rapidapi.com/exercises
+get 
+youtube api key AIzaSyCnsUEc98lVo9DslLKaKPaKikPe2FiXsQo 
+
+need to connect search data and display in the below like card
+ for each card we need the gif ,name of that exercise , bodypart ,
