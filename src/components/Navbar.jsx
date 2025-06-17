@@ -4,25 +4,28 @@ import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <Box sx={{
+    <Box 
+    
+    sx={{
       width: 'auto',
-      height: '80px',
+      height: 'auto',
       backgroundColor: '#fff',
       position: 'sticky',
       top: 0,
       left: 0,
       right: 0,
       zIndex: 1000,
-      display: 'flex',
       justifyContent: 'space-between',
+      display: 'flex',
+      flexDirection: { xs: 'column', md: 'row' },
       alignItems: 'center',
-      padding: '20px 40px',
       boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+      padding: { xs: '10px 20px', md: '20px 40px' },
     }}>
       <Stack  justifyContent={"none"}
         direction="row"
         sx={{
-          gap: { ls: '40', sm: '3px', xs: '20px' },
+          gap: { lg: '40', sm: '3px', xs: '20px' },
           justifyContent: 'none',
           px: '20px'
         }}
@@ -41,8 +44,29 @@ const Navbar = () => {
         </NavLink>
       </Stack>
       
-      <Stack sx={{ paddingRight: '100px' }}>
-        <ul style={{ display: 'flex', listStyleType: 'none', marginTop: '60px', gap: '20px' }}>
+      {/* <Stack sx={{ paddingRight: '200px'   ,display: 'flex', flexDirection: lg ? 'row':'column',}}> */}
+<Stack
+  // direction={{ xs: 'column', md: 'row' }} 
+  // justifyContent={{ xs: 'center', md: 'flex-end' }}
+  // alignItems="center"
+  spacing={2}
+  sx={{
+    listStyle: 'none',
+    padding: 0,
+    margin: 0
+  }}
+>
+
+  <ul style={{
+    listStyleType: 'none',
+    gap: '20px',
+    margin: 0,
+    padding: 0,
+    display: 'flex',
+    flexDirection: window.matchMedia('(max-width: 960px)').matches ? 'column' : 'row',
+    justifyContent: window.matchMedia('(max-width: 960px)').matches ? 'center' : 'flex-end',
+    alignItems: 'center'
+  }}>
           <li>
             <NavLink 
               to="/"
